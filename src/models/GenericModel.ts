@@ -1,5 +1,5 @@
 import { Model, isValidObjectId, UpdateQuery } from 'mongoose';
-import ErrorMessages from '../errors';
+import { ErrorMessages } from '../errors';
 import { IModel } from '../interfaces/IModel';
 
 export default abstract class GenericModel<T> implements IModel<T> {

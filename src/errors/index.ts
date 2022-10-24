@@ -1,5 +1,4 @@
-enum ErrorMessages { 
-  InvalidID = 'Invalid ID',
-}
+import ErrorMessages from './ErrorMessages';
+import ValidationError from './ValidationError';
 
-export default ErrorMessages;
+export { ErrorMessages, ValidationError };
