@@ -1,6 +1,5 @@
 import { ValidationError } from '../errors';
 import { CarSchema, ICar } from '../interfaces/ICar';
-// import { IModel } from '../interfaces/IModel';
 import GenericService from './GenericService';
 
 export default class CarService extends GenericService<ICar> {
