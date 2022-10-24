@@ -3,7 +3,8 @@ import chai from 'chai';
 const { expect } = chai;
 import CarModel from '../../../models/Car.model';
 import CarService from '../../../services/Car.service';
-import { carRequest, carResponse } from '../../mocks/carsMocks';
+import { carRequest, carResponse, carsResponse } from '../../mocks/carsMocks';
+import { ErrorMessages } from '../../../errors';
 
 describe('Car service tests', () => {
   const carModel = new CarModel();
@@ -11,6 +12,8 @@ describe('Car service tests', () => {
 
   before(async () => {
     sinon.stub(carModel, 'create').resolves(carResponse);
+    sinon.stub(carModel, 'read').resolves(carsResponse);
+    sinon.stub(carModel, 'readOne').onFirstCall().resolves(carResponse);
   });
 
   after(() => {
@@ -30,6 +33,28 @@ describe('Car service tests', () => {
         expect(error.message).to.be.equal(
           'Invalid fields. Verify the data and try again.'
         );
+      }
+    });
+  });
+
+  describe('Listing all cars', () => {
+    it('Should list all cars', async () => {
+      const cars = await carService.read();
+      expect(cars).to.be.deep.equal(carsResponse);
+    });
+  });
+
+  describe('Listing a car', () => {
+    it('Should list a car when receive a valid id', async () => {
+      const car = await carService.readOne(carResponse._id);
+      expect(car).to.be.deep.equal(carResponse);
+    });
+
+    it('Should throw an error when an object id was not found', async () => {
+      try {
+        await carService.readOne('Inexistent_id');
+      } catch (error: any) {
+        expect(error.message).to.be.equal(ErrorMessages.NotFound);
       }
     });
   });

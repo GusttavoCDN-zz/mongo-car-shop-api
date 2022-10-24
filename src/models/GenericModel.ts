@@ -1,5 +1,5 @@
 import { Model, isValidObjectId, UpdateQuery } from 'mongoose';
-import { ErrorMessages } from '../errors';
+import { ErrorMessages, ValidationError } from '../errors';
 import { IModel } from '../interfaces/IModel';
 
 export default abstract class GenericModel<T> implements IModel<T> {
@@ -14,17 +14,17 @@ export default abstract class GenericModel<T> implements IModel<T> {
   public read = async (): Promise<T[]> => this._model.find();
 
   public readOne = async (id: string): Promise<T | null> => {
-    if (!isValidObjectId(id)) throw new Error(ErrorMessages.InvalidID);
+    if (!isValidObjectId(id)) throw new ValidationError(ErrorMessages.InvalidID);
     return this._model.findById(id);
   };
 
   public update = async (id: string, data: T): Promise<T | null> => {
-    if (!isValidObjectId(id)) throw new Error(ErrorMessages.InvalidID);
+    if (!isValidObjectId(id)) throw new ValidationError(ErrorMessages.InvalidID);
     return this._model.findByIdAndUpdate(id, { ...data } as UpdateQuery<T>);
   };
 
   public delete = async (id: string): Promise<T | null> => {
-    if (!isValidObjectId(id)) throw new Error(ErrorMessages.InvalidID);
+    if (!isValidObjectId(id)) throw new ValidationError(ErrorMessages.InvalidID);
     return this._model.findByIdAndDelete(id);
   };
 }

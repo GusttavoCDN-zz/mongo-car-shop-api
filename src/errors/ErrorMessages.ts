@@ -1,6 +1,6 @@
 enum ErrorMessages {
-  InvalidID = 'Invalid ID',
-  NotFound = 'Item not found',
+  InvalidID = 'Id must have 24 hexadecimal characters',
+  NotFound = 'Object not found',
 }
 
 export default ErrorMessages;

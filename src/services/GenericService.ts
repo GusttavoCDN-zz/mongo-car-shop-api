@@ -1,4 +1,5 @@
 import { ErrorMessages } from '../errors';
+import NotFoundError from '../errors/NotFoundError';
 import { IModel } from '../interfaces/IModel';
 
 export default abstract class GenericService<T> {
@@ -15,21 +16,21 @@ export default abstract class GenericService<T> {
   public readOne = async (id: string): Promise<T> => {
     const data = await this._model.readOne(id);
 
-    if (!data) throw new Error(ErrorMessages.NotFound);
+    if (!data) throw new NotFoundError(ErrorMessages.NotFound);
     return data;
   };
 
   public update = async (id: string, data: T): Promise<T> => {
     const item = await this._model.update(id, data);
 
-    if (!item) throw new Error(ErrorMessages.NotFound);
+    if (!item) throw new NotFoundError(ErrorMessages.NotFound);
     return item;
   };
 
   public delete = async (id: string): Promise<T> => {
     const data = await this._model.delete(id);
 
-    if (!data) throw new Error(ErrorMessages.NotFound);
+    if (!data) throw new NotFoundError(ErrorMessages.NotFound);
     return data;
   };
 }

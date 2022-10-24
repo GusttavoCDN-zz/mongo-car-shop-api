@@ -4,6 +4,7 @@ const { expect } = chai;
 import CarModel from '../../../models/Car.model';
 import { Model } from 'mongoose';
 import { carRequest, carResponse, carsResponse } from '../../mocks/carsMocks';
+import { ErrorMessages } from '../../../errors';
 
 describe('Car model tests', () => {
   const carModel = new CarModel();
@@ -53,7 +54,7 @@ describe('Car model tests', () => {
       try {
         await carModel.readOne('invalid_id');
       } catch (error: any) {
-        expect(error.message).to.be.equal('Invalid ID');
+        expect(error.message).to.be.equal(ErrorMessages.InvalidID);
       }
     });
 
@@ -73,7 +74,7 @@ describe('Car model tests', () => {
       try {
         await carModel.update('invalid_id', carRequest);
       } catch (error: any) {
-        expect(error.message).to.be.equal('Invalid ID');
+        expect(error.message).to.be.equal(ErrorMessages.InvalidID);
       }
     });
 
@@ -93,7 +94,7 @@ describe('Car model tests', () => {
       try {
         await carModel.delete('invalid_id');
       } catch (error: any) {
-        expect(error.message).to.be.equal('Invalid ID');
+        expect(error.message).to.be.equal(ErrorMessages.InvalidID);
       }
     });
 
