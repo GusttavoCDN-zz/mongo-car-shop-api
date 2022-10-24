@@ -5,7 +5,7 @@ import CarModel from '../../../models/Car.model';
 import { Model } from 'mongoose';
 import { carRequest, carResponse, carsResponse } from '../../mocks/carsMocks';
 
-describe('Sua descrição', () => {
+describe('Car model tests', () => {
   const carModel = new CarModel();
 
   before(async () => {
