@@ -5,7 +5,7 @@
 <details>
   <summary markdown="span"><strong>:us: English</strong></summary><br />
 
-MongoDB, Node.js, Express.js, TypeScript, OOP (Object-Oriented Programming) and SOLID project developed by [Raphael Martins](https://www.linkedin.com/in/raphaelameidamartins/) at the end of Unit 30 ([Back-end Development Module](https://github.com/raphaelalmeidamartins/trybe_exercicios/tree/main/3_Desenvolvimento-Back-end)) of Trybe's Web Development course. I was approved with 100% of the mandatory and optional requirements met.
+MongoDB, Node.js, Express.js, TypeScript, OOP (Object-Oriented Programming) and SOLID project developed by [Gustavo da Silva](https://www.linkedin.com/in/gustavocdn/) at the end of Unit 30 of Trybe's Web Development course. I was approved with 100% of the mandatory and optional requirements met.
 
 We had to develop a RESTful API for a Car shop using OOP (Object-Oriented Programming) and SOLID principles with a MongoDB database. We also had to implement unit tests.
 <br />
@@ -15,7 +15,7 @@ We had to develop a RESTful API for a Car shop using OOP (Object-Oriented Progra
 <details>
   <summary markdown="span"><strong>:brazil: Português</strong></summary><br />
 
-Projeto de MongoDB, Node.js, Express.js, TypeScript, POO (Programação Orientada a Objetos) e SOLID desenvolvido por [Gustavo da SIlva](https://www.linkedin.com/in/gustavocdn/) ao final do Bloco 30 ([Módulo Desenvolvimento Back-end](https://github.com/raphaelalmeidamartins/trybe_exercicios/tree/main/3_Desenvolvimento-Back-end)) do curso de Desenvolvimento Web da Trybe. Fui aprovado com 100% dos requisitos obrigatórios e opcionais atingidos.
+Projeto de MongoDB, Node.js, Express.js, TypeScript, POO (Programação Orientada a Objetos) e SOLID desenvolvido por [Gustavo da Silva](https://www.linkedin.com/in/gustavocdn/) ao final do Bloco 30 do curso de Desenvolvimento Web da Trybe. Fui aprovado com 100% dos requisitos obrigatórios e opcionais atingidos.
 
 Tivemos que desenvolver uma API RESTful para uma loja de veículos utilizando POO (Programação Orientada a Objetos) e princípios de SOLID com um banco de dados MongoDB. Também tivemos que implementar testes unitários.
 <br />
