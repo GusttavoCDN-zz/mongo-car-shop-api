@@ -1,4 +1,4 @@
-# :red_car: MongoDB Car Shop :motorcycle
+# :red_car: MongoDB Car Shop
 
 ## :page_with_curl: About/Sobre
 
